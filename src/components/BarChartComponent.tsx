@@ -10,14 +10,14 @@ export const BarChartComponent = () => {
   );
 
   return (
-    <section className=" w-full border border-[#F0F0F2] px-4 py-2 mt-4 rounded-md flex flex-col h-[320px] 4xl:h-[400px] overflow-y-auto">
+    <section className="xl:w-[50%] w-full border border-[#F0F0F2] px-4 py-2 mt-4 rounded-md flex flex-col h-[400px] overflow-y-auto">
       <GraphHeaders heading="Oscar Statistics" />
 
       <div className="h-full ">
         <BarGraph
           data={reduxMovieData}
-          firstPlotADataKey="oscar_winning"
-          secondPlotDataKey="oscar_nominations"
+          firstPlotADataKey="oscar_nominations"
+          secondPlotDataKey="oscar_winning"
           dataKey="title"
         />
       </div>
