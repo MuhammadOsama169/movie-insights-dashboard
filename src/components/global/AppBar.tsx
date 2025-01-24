@@ -1,8 +1,8 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { BsList } from "react-icons/bs";
 import { motion } from "framer-motion";
-import { RxCross1 } from "react-icons/rx";
-import { sidebarItems } from "../../assets/data/sidebarData";
+
+import { sidebarItems } from "@/assets/data/SidebarData";
 import { SidebarItemTypes } from "../../types/SidebarItemTypes";
 
 interface AppBarProps {

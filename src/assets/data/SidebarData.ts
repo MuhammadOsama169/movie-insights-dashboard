@@ -16,7 +16,7 @@ export const sidebarItems: SidebarItemTypes[] = [
     title: "Browse",
     icon: MdOutlineMovieFilter,
     comingSoon: true,
-    href: "/browse",
+    href: "/",
   },
 
   {
