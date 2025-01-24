@@ -5,11 +5,8 @@ import { PreLoader } from "./components/global/PreLoader";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { BrowseMovies } from "./pages/BrowseMovies";
 
-import { PublicRoute } from "./middleware/PublicRoute";
-
 const queryClient = new QueryClient();
 const Dashboard = lazy(() => import("@/pages/Dashboard"));
-const MovieDetail = lazy(() => import("@/pages/MovieDetail"));
 
 function App() {
   return (
