@@ -14,9 +14,31 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/browse" element={<BrowseMovies />} />
+            <Route
+              path="/dashboard"
+              element={
+                <PublicRoute>
+                  <Dashboard />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="/"
+              element={
+                <PublicRoute>
+                  <BrowseMovies />
+                </PublicRoute>
+              }
+            />
+            <Route
+              path="/movies/:movieId"
+              element={
+                <PublicRoute>
+                  <MovieDetail />
+                </PublicRoute>
+              }
+            />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </BrowserRouter>
       </QueryClientProvider>
