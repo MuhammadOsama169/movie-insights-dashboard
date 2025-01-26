@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import MoviesSlice from "./slices/MovieSlice";
+import ActivePageSlice from "./slices/ActivePageSlice";
 
 export const store = configureStore({
   reducer: {
     MoviesSlice,
+    ActivePageSlice,
   },
 });
 

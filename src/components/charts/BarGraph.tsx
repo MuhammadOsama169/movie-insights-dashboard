@@ -1,3 +1,4 @@
+import { useMediaQuery } from "@uidotdev/usehooks";
 import React from "react";
 import {
   BarChart,
@@ -25,40 +26,42 @@ export const BarGraph = ({
   firstPlotADataKey,
   secondPlotDataKey,
 }: BarGraphProps) => {
+  const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
+
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <BarChart
-        width={500}
-        height={300}
-        data={data}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
+      <BarChart width={500} height={300} data={data}>
         <CartesianGrid strokeDasharray="3 3" />
-        <Brush
-          dataKey={dataKey}
-          height={30}
-          stroke="#8884d8"
-          startIndex={0}
-          endIndex={6}
-        />
+        {data.length > 3 && (
+          <Brush
+            dataKey={dataKey}
+            height={30}
+            stroke="#8884d8"
+            startIndex={0}
+            endIndex={isSmallDevice ? 2 : 6}
+          />
+        )}
+
         <XAxis dataKey={dataKey} />
         <YAxis />
-        <Tooltip />
+        <Tooltip
+          contentStyle={{
+            backgroundColor: "#333",
+            borderRadius: "5px",
+          }}
+        />
         <Legend />
         <Bar
           dataKey={firstPlotADataKey}
           fill="#8884d8"
-          activeBar={<Rectangle fill="pink" stroke="blue" />}
+          name="Oscars Won"
+          activeBar={<Rectangle />}
         />
         <Bar
           dataKey={secondPlotDataKey}
           fill="#82ca9d"
-          activeBar={<Rectangle fill="gold" stroke="purple" />}
+          name="Oscars Nominated"
+          activeBar={<Rectangle />}
         />
       </BarChart>
     </ResponsiveContainer>

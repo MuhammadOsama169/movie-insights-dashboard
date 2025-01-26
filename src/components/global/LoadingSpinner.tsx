@@ -1,9 +1,15 @@
 import React from "react";
 
-export const LoadingSpinner = () => {
+interface LoadingSpinnerProps {
+  size?: string;
+}
+export const LoadingSpinner = ({ size = "60px" }: LoadingSpinnerProps) => {
   return (
     <div className="relative">
-      <div className="w-6 h-6 border-2 border-yellow-400 border-t-transparent rounded-full animate-spin"></div>
+      <div
+        style={{ width: size, height: size }}
+        className={` border-4  border-t-transparent rounded-full animate-spin`}
+      ></div>
     </div>
   );
 };

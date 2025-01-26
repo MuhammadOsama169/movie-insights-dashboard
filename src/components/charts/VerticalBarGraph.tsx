@@ -1,3 +1,4 @@
+import { useMediaQuery } from "@uidotdev/usehooks";
 import React from "react";
 import {
   BarChart,
@@ -20,9 +21,10 @@ interface VerticalBarGraphProps {
 export const VerticalBarGraph = ({
   data,
   dataKey,
-
   secondPlotDataKey,
 }: VerticalBarGraphProps) => {
+  const isSmallDevice = useMediaQuery("only screen and (max-width : 768px)");
+
   return (
     <ResponsiveContainer
       width="100%"
@@ -32,22 +34,28 @@ export const VerticalBarGraph = ({
       <BarChart data={data} layout="vertical">
         <XAxis type="number" />
         <YAxis dataKey={dataKey} type="category" hide={true} />
-        <Tooltip />
-
-        <Brush
-          dataKey={dataKey}
-          height={30}
-          stroke="#8884d8"
-          startIndex={0}
-          endIndex={6}
+        <Tooltip
+          contentStyle={{
+            backgroundColor: "#333",
+            borderRadius: "5px",
+          }}
         />
+        {data.length > 3 && (
+          <Brush
+            dataKey={dataKey}
+            height={30}
+            stroke="#8884d8"
+            startIndex={0}
+            endIndex={isSmallDevice ? 3 : 6}
+          />
+        )}
 
         <Bar
           dataKey={secondPlotDataKey}
           fill="#8884d8"
           barSize={50}
           stackId="a"
-          name={secondPlotDataKey}
+          name="IMDB Rating"
         >
           <LabelList
             dataKey={dataKey}

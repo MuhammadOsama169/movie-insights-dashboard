@@ -14,7 +14,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-export const PieGraph = ({ data }: { data: MovieDataTypes[] }) => {
+export const RadarGraph = ({ data }: { data: MovieDataTypes[] }) => {
   const oscarWinsByGenre: any = useMemo(() => {
     // total oscar wins per genre
     const genreWinsMap = data?.reduce((acc: any, movie: MovieDataTypes) => {
@@ -48,7 +48,12 @@ export const PieGraph = ({ data }: { data: MovieDataTypes[] }) => {
             Math.max(...oscarWinsByGenre.map((d: GenreTypes) => d.value)) + 1,
           ]}
         />
-        <Tooltip />
+        <Tooltip
+          contentStyle={{
+            backgroundColor: "#333",
+            borderRadius: "5px",
+          }}
+        />
         <Radar
           name="Oscar Wins"
           dataKey="value"
