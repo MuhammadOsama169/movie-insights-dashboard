@@ -16,7 +16,7 @@ export const Sidebar = () => {
   };
   return (
     <>
-      <div className="xl:absolute xl:flex hidden w-[200px] h-[100vh]  shadow-xl bg-white ">
+      <div className="xl:absolute xl:flex hidden w-[200px] h-[100vh]  shadow-xl bg-[#282828] ">
         <aside
           className={`p-4 mobile:hidden tablet:hidden xl:visible h-full flex flex-col justify-between `}
         >

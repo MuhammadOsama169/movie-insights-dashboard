@@ -34,7 +34,7 @@ function App() {
               }
             />
             <Route
-              path="/movies/:movieId"
+              path="/movie/:movieId"
               element={
                 <PublicRoute>
                   <MovieDetail />

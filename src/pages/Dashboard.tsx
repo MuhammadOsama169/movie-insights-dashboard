@@ -13,7 +13,7 @@ const Dashboard = () => {
   );
 
   return (
-    <div className=" relative h-full">
+    <div className=" relative h-[100vh] bg-[#1f1f1f] text-white">
       <Sidebar />
       <div className="xl:ml-[220px] grid grid-col-1 xl:grid-cols-2 gap-4">
         {isLoading ? <LoadingSpinner /> : <VerticalBarGraphComponent />}
