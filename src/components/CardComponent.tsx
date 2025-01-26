@@ -10,7 +10,7 @@ interface CardComponentProps {
 
 export const CardComponent = ({ data }: CardComponentProps) => {
   return (
-    <Link to={`/movies/${data.id}`}>
+    <Link to={`/movie/${data.id}`}>
       <div className="group relative w-[250px] h-[350px] rounded-md overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer">
         <img
           src={data.poster}
