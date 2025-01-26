@@ -42,7 +42,7 @@ export const MovieDetail = () => {
   ];
 
   return (
-    <main className="min-h-screen bg-[#1f1f1f] text-white p-6">
+    <main className="min-h-screen  text-white p-6">
       <button
         onClick={() => navigate("/")}
         className="flex items-center mb-6 text-white hover:text-gray-300 transition-colors"
@@ -110,7 +110,7 @@ export const MovieDetail = () => {
           </div>
 
           {/* Oscar Nominations vs Wins  */}
-          <div className="rounded-lg h-[250px] mb-4">
+          <div className="rounded-lg 4xl:h-[250px] h-[200px] mb-4">
             <h3 className="text-xl font-semibold mb-4">
               Oscar Nominations vs Wins
             </h3>
@@ -130,9 +130,18 @@ export const MovieDetail = () => {
                     borderRadius: "5px",
                   }}
                 />
-
-                <Bar dataKey="nominations" fill="#4ADE80" stackId="a" />
-                <Bar dataKey="wins" fill="#FBBF24" stackId="a" />
+                <Bar
+                  dataKey="nominations"
+                  fill="#4ADE80"
+                  stackId="a"
+                  name="Oscars Nominated"
+                />
+                <Bar
+                  dataKey="wins"
+                  fill="#FBBF24"
+                  stackId="a"
+                  name="Oscars Won"
+                />
               </BarChart>
             </ResponsiveContainer>
           </div>

@@ -1,3 +1,5 @@
+import { PreLoader } from "@/components/global/PreLoader";
+import { ServerErrorPage } from "@/pages/error/ServerErrorPage";
 import { RootState } from "@/store";
 import { setData } from "@/store/slices/MovieSlice";
 import { useQuery } from "@tanstack/react-query";
@@ -20,12 +22,14 @@ export const PublicRoute = ({ children }: any) => {
         },
       }
     );
-
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
     const data = await response.json();
     return data;
   };
 
-  const { data } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryKey: ["movies"],
     queryFn: fetchMovies,
   });
@@ -35,6 +39,14 @@ export const PublicRoute = ({ children }: any) => {
       dispatch(setData(data.record));
     }
   }, [data]);
+
+  if (isLoading) {
+    return <PreLoader />;
+  }
+
+  if (isError) {
+    return <ServerErrorPage />;
+  }
 
   return children;
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "@/assets/icons/logo.svg";
+import { LoadingSpinner } from "./LoadingSpinner";
 
 export const PreLoader = () => {
   return (
@@ -7,11 +8,11 @@ export const PreLoader = () => {
       <img src={logo} alt="Loading" className="w-20 h-20" loading="lazy" />
 
       <div className="w-24 my-4">
-        <div className="w-full h-1 bg-gray-200 rounded overflow-hidden">
-          <div className="h-full bg-purple-700 animate-progress" />
-        </div>
+        <LoadingSpinner size="100px" />
       </div>
-
+      <p className="text-white font-bold text-2xl tablet:text-xl mobile:text-lg">
+        Loading...
+      </p>
       <svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24"></svg>
     </div>
   );

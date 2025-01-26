@@ -3,7 +3,6 @@ import { RootState } from "@/store";
 import React, { useMemo, useState } from "react";
 import { useSelector } from "react-redux";
 import { HiSearch } from "react-icons/hi";
-import { Sidebar } from "@/components/global/Sidebar";
 import { useClickAway, useDebounce } from "@uidotdev/usehooks";
 import { GoSortDesc } from "react-icons/go";
 import { GenreEnums } from "@/enum/GenreEnums";
@@ -78,9 +77,8 @@ export const BrowseMovies = () => {
   }, [reduxMovieData, selectedGenre, imdbSortOrder, debouncedSearchTerm]);
 
   return (
-    <div className="sticky bg-[#1f1f1f] text-white">
-      <Sidebar />
-      <main className="flex flex-col xl:ml-[220px] overflow-y-auto h-[100vh]">
+    <div className="sticky bg-[#08080a] text-white">
+      <main className="flex flex-col overflow-y-auto h-[100vh]">
         <section className="flex flex-col xl:flex-row w-full justify-between mx-auto my-4 px-8">
           {/* search */}
           <div
