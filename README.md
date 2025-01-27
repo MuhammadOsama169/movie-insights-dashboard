@@ -1,5 +1,5 @@
 
-🎥 Oscars Statistics Website 📊
+## Oscars Statistics Website 🎥
 
 A dynamic and interactive website showcasing statistics on Oscar nominations, wins, and IMDb ratings for movies. Dive into the world of cinema with engaging visuals and insightful data analysis.
 
@@ -15,7 +15,7 @@ https://watchinsights.netlify.app/
 - Interactive charts and graphs for data visualization.
 - Responsive and user-friendly interface
 
-##Technologies and Packages Used 📦
+## Technologies and Packages Used 📦
 - Redux Toolkit
 - React Query
 - Taiwind CSS
@@ -55,16 +55,7 @@ Leave a github star if you found this repo useful. This helps in increasing the 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-## Usage/Examples
-
-```javascript
-yarn run dev
-npx convex dev
-```
 
 
-## 🔗 Links
-[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://portfolio-muhammadosama.netlify.app//)
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammad-osama-688123162/)
 
 
