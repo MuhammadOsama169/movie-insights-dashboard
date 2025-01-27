@@ -110,40 +110,47 @@ export const MovieDetail = () => {
           </div>
 
           {/* Oscar Nominations vs Wins  */}
-          <div className="rounded-lg 4xl:h-[250px] h-[200px] mb-4">
+          <div className="rounded-lg 4xl:h-[250px] h-[200px] xl:mb-4 mb-10">
             <h3 className="text-xl font-semibold mb-4">
               Oscar Nominations vs Wins
             </h3>
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart data={oscarData} barSize={50}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#555" />
-                <XAxis
-                  dataKey="name"
-                  stroke="#fff"
-                  tick={{ fill: "#fff", fontSize: 14, textAnchor: "middle" }}
-                  dy={10}
-                />
-                <YAxis stroke="#fff" allowDecimals={false} />
-                <Tooltip
-                  contentStyle={{
-                    backgroundColor: "#333",
-                    borderRadius: "5px",
-                  }}
-                />
-                <Bar
-                  dataKey="nominations"
-                  fill="#4ADE80"
-                  stackId="a"
-                  name="Oscars Nominated"
-                />
-                <Bar
-                  dataKey="wins"
-                  fill="#FBBF24"
-                  stackId="a"
-                  name="Oscars Won"
-                />
-              </BarChart>
-            </ResponsiveContainer>
+            {selectedMovie.oscar_nominations_list.length > 1 &&
+            selectedMovie.oscar_nominations_list.length > 1 ? (
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart data={oscarData} barSize={50}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="#555" />
+                  <XAxis
+                    dataKey="name"
+                    stroke="#fff"
+                    tick={{ fill: "#fff", fontSize: 14, textAnchor: "middle" }}
+                    dy={10}
+                  />
+                  <YAxis stroke="#fff" allowDecimals={false} />
+                  <Tooltip
+                    contentStyle={{
+                      backgroundColor: "#333",
+                      borderRadius: "5px",
+                    }}
+                  />
+                  <Bar
+                    dataKey="nominations"
+                    fill="#4ADE80"
+                    stackId="a"
+                    name="Oscars Nominated"
+                  />
+                  <Bar
+                    dataKey="wins"
+                    fill="#FBBF24"
+                    stackId="a"
+                    name="Oscars Won"
+                  />
+                </BarChart>
+              </ResponsiveContainer>
+            ) : (
+              <p className="text-center border rounded-md text-gray-400 justify-center items-center flex h-full">
+                Selected Movie does not have any Oscar Wins or Nominations
+              </p>
+            )}
           </div>
         </div>
 

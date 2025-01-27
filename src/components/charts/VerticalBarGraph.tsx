@@ -32,7 +32,11 @@ export const VerticalBarGraph = ({
       style={{ direction: "ltr" }}
     >
       <BarChart data={data} layout="vertical">
-        <XAxis type="number" />
+        <XAxis
+          type="number"
+          stroke="#fff"
+          tick={{ fill: "#fff", fontSize: 14, textAnchor: "middle" }}
+        />
         <YAxis dataKey={dataKey} type="category" hide={true} />
         <Tooltip
           contentStyle={{

@@ -40,7 +40,7 @@ export const RadarGraph = ({ data }: { data: MovieDataTypes[] }) => {
     <ResponsiveContainer width="100%" height="100%">
       <RadarChart data={oscarWinsByGenre}>
         <PolarGrid />
-        <PolarAngleAxis dataKey="name" />
+        <PolarAngleAxis dataKey="name" stroke="#fff" tick={{ fill: "#fff" }} />
         <PolarRadiusAxis
           angle={30}
           domain={[
