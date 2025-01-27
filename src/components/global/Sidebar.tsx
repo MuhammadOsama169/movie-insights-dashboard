@@ -24,7 +24,7 @@ export const Sidebar = ({ openSidebar, setOpenSidebar }: SidebarProps) => {
   const bottomItems = sidebarItems.slice(3);
 
   const handleNavigate = (item: SidebarItemTypes) => {
-    dispatch(setActivePage(item.title));
+    dispatch(setActivePage(item.id));
     navigate(`${item?.href}`);
   };
   //ref for hambergur menu using useClickaway
@@ -55,7 +55,7 @@ export const Sidebar = ({ openSidebar, setOpenSidebar }: SidebarProps) => {
               <button
                 key={item.id}
                 className={`flex gap-2 items-center p-2 my-2 ${
-                  activePage === item.title ? "text-red-500" : ""
+                  activePage === item.id ? "text-red-500" : ""
                 }  ${
                   item.comingSoon
                     ? "cursor-not-allowed"
