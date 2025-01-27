@@ -6,14 +6,14 @@ import { MdAutoGraph } from "react-icons/md";
 
 export const sidebarItems: SidebarItemTypes[] = [
   {
-    id: 1,
+    id: "dashboard",
     title: "Insights",
     icon: MdAutoGraph,
     comingSoon: false,
     href: "/dashboard",
   },
   {
-    id: 2,
+    id: "movies",
     title: "Movies",
     icon: MdOutlineMovieFilter,
     comingSoon: false,
@@ -21,21 +21,21 @@ export const sidebarItems: SidebarItemTypes[] = [
   },
 
   {
-    id: 3,
+    id: "tv_shows",
     title: "Tv Shows",
     icon: FaTv,
     comingSoon: true,
     href: "#",
   },
   {
-    id: 4,
+    id: "settings",
     title: "Settings",
     icon: IoSettingsOutline,
     comingSoon: true,
     href: "#",
   },
   {
-    id: 5,
+    id: "help",
     title: "Help",
     icon: MdHelpOutline,
     comingSoon: true,

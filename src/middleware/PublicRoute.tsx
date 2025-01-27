@@ -1,12 +1,15 @@
 import { PreLoader } from "@/components/global/PreLoader";
 import { ServerErrorPage } from "@/pages/error/ServerErrorPage";
 import { RootState } from "@/store";
+import { setActivePage } from "@/store/slices/ActivePageSlice";
 import { setData } from "@/store/slices/MovieSlice";
 import { useQuery } from "@tanstack/react-query";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 
 export const PublicRoute = ({ children }: any) => {
+  const location = useLocation();
   const dispatch = useDispatch();
   const initialDataLoaded = useSelector(
     (state: RootState) => state?.MoviesSlice?.isLoading
@@ -40,12 +43,26 @@ export const PublicRoute = ({ children }: any) => {
     }
   }, [data]);
 
+  useEffect(() => {
+    const activePage = location.pathname.startsWith("/")
+      ? location.pathname.slice(1)
+      : location.pathname;
+
+    dispatch(setActivePage(activePage));
+  }, [location.pathname]);
+
   if (isLoading) {
     return <PreLoader />;
   }
 
   if (isError) {
-    return <ServerErrorPage />;
+    return (
+      <ServerErrorPage
+        title="Server Error"
+        desc="There was an error while fetching the data. Please try again or
+          contact the developer if the issue continues"
+      />
+    );
   }
 
   return children;
