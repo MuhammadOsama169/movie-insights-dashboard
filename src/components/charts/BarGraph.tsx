@@ -42,7 +42,11 @@ export const BarGraph = ({
           />
         )}
 
-        <XAxis dataKey={dataKey} />
+        <XAxis
+          dataKey={dataKey}
+          stroke="#fff"
+          tick={{ fill: "#fff", fontSize: 14, textAnchor: "middle" }}
+        />
         <YAxis />
         <Tooltip
           contentStyle={{

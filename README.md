@@ -1,50 +1,70 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🎥 Oscars Statistics Website 📊
 
-Currently, two official plugins are available:
+A dynamic and interactive website showcasing statistics on Oscar nominations, wins, and IMDb ratings for movies. Dive into the world of cinema with engaging visuals and insightful data analysis.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Demo 💻
 
-## Expanding the ESLint configuration
+https://watchinsights.netlify.app/
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Features 🛠 
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- View detailed statistics of Oscar-nominated movies.
+- Compare nominations, wins, and IMDb ratings for popular films.
+- Interactive charts and graphs for data visualization.
+- Responsive and user-friendly interface
+
+##Technologies and Packages Used 📦
+- Redux Toolkit
+- React Query
+- Taiwind CSS
+- Framer Motion
+- React Icons
+- Recharts
+- Eslint Airbnb
+- uidotdev/usehooks for debouncer & useMediaQuery
+
+## Data Source 📊
+Data was created through the help of a github repo linked below
+- https://jsonbin.io/
+
+- https://github.com/toedter/movies-demo/blob/master/backend/src/main/resources/static/movie-data/movies-250.json
+
+##  Environment Variables
+```VITE_MASTER_X_KEY= <backend_api_url>```
+
+
+## Getting Started🚀
+```javascript
+npm install
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🌟 About the Author
+I am a passionate full-stack developer keen on exploring unique projects and collaborating with dynamic teams. Visit my portfolio: 
+https://portfolio-muhammadosama.netlify.app//
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+## Have a Question❓
+Feel free to open an issue in the repository or reach out to me on Linkedin: https://www.linkedin.com/in/muhammad-osama-688123162/ 
+
+## Leave a star  ⭐
+Leave a github star if you found this repo useful. This helps in increasing the visibility of this repo and others finding it too.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+## Usage/Examples
+
+```javascript
+yarn run dev
+npx convex dev
 ```
+
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://portfolio-muhammadosama.netlify.app//)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/muhammad-osama-688123162/)
+
+

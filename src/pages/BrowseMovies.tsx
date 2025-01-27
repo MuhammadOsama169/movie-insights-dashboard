@@ -77,8 +77,8 @@ export const BrowseMovies = () => {
   }, [reduxMovieData, selectedGenre, imdbSortOrder, debouncedSearchTerm]);
 
   return (
-    <div className="sticky bg-[#08080a] text-white">
-      <main className="flex flex-col overflow-y-auto h-[100vh]">
+    <div className="sticky bg-[#08080a] text-white ">
+      <main className="flex flex-col overflow-y-auto  p-5">
         <section className="flex flex-col xl:flex-row w-full justify-between mx-auto my-4 px-8">
           {/* search */}
           <div

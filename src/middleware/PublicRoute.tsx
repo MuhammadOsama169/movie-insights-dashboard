@@ -1,15 +1,12 @@
 import { PreLoader } from "@/components/global/PreLoader";
 import { ServerErrorPage } from "@/pages/error/ServerErrorPage";
 import { RootState } from "@/store";
-import { setActivePage } from "@/store/slices/ActivePageSlice";
 import { setData } from "@/store/slices/MovieSlice";
 import { useQuery } from "@tanstack/react-query";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useLocation } from "react-router-dom";
 
 export const PublicRoute = ({ children }: any) => {
-  const location = useLocation();
   const dispatch = useDispatch();
   const initialDataLoaded = useSelector(
     (state: RootState) => state?.MoviesSlice?.isLoading
@@ -42,14 +39,6 @@ export const PublicRoute = ({ children }: any) => {
       dispatch(setData(data.record));
     }
   }, [data]);
-
-  useEffect(() => {
-    const activePage = location.pathname.startsWith("/")
-      ? location.pathname.slice(1)
-      : location.pathname;
-
-    dispatch(setActivePage(activePage));
-  }, [location.pathname]);
 
   if (isLoading) {
     return <PreLoader />;

@@ -24,7 +24,7 @@ export const Sidebar = ({ openSidebar, setOpenSidebar }: SidebarProps) => {
   const bottomItems = sidebarItems.slice(3);
 
   const handleNavigate = (item: SidebarItemTypes) => {
-    dispatch(setActivePage(item.id));
+    dispatch(setActivePage(item.title));
     navigate(`${item?.href}`);
   };
   //ref for hambergur menu using useClickaway
@@ -55,7 +55,7 @@ export const Sidebar = ({ openSidebar, setOpenSidebar }: SidebarProps) => {
               <button
                 key={item.id}
                 className={`flex gap-2 items-center p-2 my-2 ${
-                  activePage === item.id ? "text-red-500" : ""
+                  activePage === item.title ? "text-red-500" : ""
                 }  ${
                   item.comingSoon
                     ? "cursor-not-allowed"
@@ -67,7 +67,7 @@ export const Sidebar = ({ openSidebar, setOpenSidebar }: SidebarProps) => {
                 <item.icon size={24} />
                 <span>{item.title}</span>
                 {item.comingSoon && (
-                  <span className="rounded-full text-black text-[9px] bg-yellow-300 p-1">
+                  <span className="rounded-full text-black text-[6px] bg-yellow-300 p-1">
                     Coming Soon
                   </span>
                 )}
@@ -86,7 +86,7 @@ export const Sidebar = ({ openSidebar, setOpenSidebar }: SidebarProps) => {
                 <item.icon size={24} />
                 <span>{item.title}</span>
                 {item.comingSoon && (
-                  <span className="rounded-full text-black text-[9px] bg-yellow-300 p-1">
+                  <span className="rounded-full text-black text-[6px] bg-yellow-300 p-1">
                     Coming Soon
                   </span>
                 )}
