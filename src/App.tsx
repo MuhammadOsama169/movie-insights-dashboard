@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { BrowseMovies } from "./pages/BrowseMovies";
 import { PublicRoute } from "./middleware/PublicRoute";
 import { Layout } from "./components/global/Layout";
+import { ServerErrorPage } from "./pages/error/ServerErrorPage";
 
 const queryClient = new QueryClient();
 const Dashboard = lazy(() => import("@/pages/Dashboard"));
@@ -39,6 +40,15 @@ function App() {
                   <PublicRoute>
                     <MovieDetail />
                   </PublicRoute>
+                }
+              />
+              <Route
+                path="*"
+                element={
+                  <ServerErrorPage
+                    title="404 Page Not Found "
+                    desc="The page your trying to access does not exist. Please return back"
+                  />
                 }
               />
             </Routes>
