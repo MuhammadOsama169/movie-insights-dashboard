@@ -3,6 +3,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { SidebarItemTypes } from "../../types/SidebarItemTypes";
 import { FaTv } from "react-icons/fa6";
 import { MdAutoGraph } from "react-icons/md";
+import { TbWorldStar } from "react-icons/tb";
 
 export const sidebarItems: SidebarItemTypes[] = [
   {
@@ -14,12 +15,18 @@ export const sidebarItems: SidebarItemTypes[] = [
   },
   {
     id: "movies",
-    title: "Movies",
-    icon: MdOutlineMovieFilter,
+    title: "Top Movies",
+    icon: TbWorldStar,
     comingSoon: false,
     href: "/",
   },
-
+  {
+    id: "trending_movies",
+    title: "Trending Movies",
+    icon: MdOutlineMovieFilter,
+    comingSoon: false,
+    href: "/trending-movies",
+  },
   {
     id: "tv_shows",
     title: "Tv Shows",

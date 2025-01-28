@@ -20,8 +20,8 @@ export const Sidebar = ({ openSidebar, setOpenSidebar }: SidebarProps) => {
     (state: RootState) => state?.ActivePageSlice.active_page
   );
 
-  const topItems = sidebarItems.slice(0, 3);
-  const bottomItems = sidebarItems.slice(3);
+  const topItems = sidebarItems.slice(0, 4);
+  const bottomItems = sidebarItems.slice(4);
 
   const handleNavigate = (item: SidebarItemTypes) => {
     dispatch(setActivePage(item.title));

@@ -136,9 +136,15 @@ export const BrowseMovies = () => {
         </section>
         {/* movie cards */}
         <section className="grid grid-cols-1 md:grid-cols-4 4xl:grid-cols-5 gap-5 place-items-center text-white text-center ">
-          {filteredAndSortedMovies?.map((movie, id) => (
-            <div key={id}>
-              <CardComponent data={movie} />
+          {filteredAndSortedMovies?.map((movie) => (
+            <div key={movie.id}>
+              <CardComponent
+                title={movie.title}
+                poster={movie.poster}
+                rating={movie.imdb_rating}
+                id={movie.id}
+                type="oscar"
+              />
             </div>
           ))}
         </section>
