@@ -16,10 +16,13 @@ import {
   ResponsiveContainer,
   CartesianGrid,
 } from "recharts";
+import { setActivePage } from "@/store/slices/ActivePageSlice";
 
 export const MovieDetail = () => {
   const { movieId } = useParams<{ movieId: string }>();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const movies = useSelector(
     (state: RootState) => state?.MoviesSlice.movies_data
   );
@@ -41,10 +44,14 @@ export const MovieDetail = () => {
     },
   ];
 
+  const handleNavigateHome = () => {
+    dispatch(setActivePage("Top Movies"));
+    navigate("/");
+  };
   return (
     <main className="min-h-screen  text-white p-6">
       <button
-        onClick={() => navigate("/")}
+        onClick={handleNavigateHome}
         className="flex items-center mb-6 text-white hover:text-gray-300 transition-colors"
       >
         <TbArrowBackUp size={24} className="mr-2" />

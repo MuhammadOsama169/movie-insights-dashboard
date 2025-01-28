@@ -6,6 +6,8 @@ import { BrowseMovies } from "./pages/BrowseMovies";
 import { PublicRoute } from "./middleware/PublicRoute";
 import { Layout } from "./components/global/Layout";
 import { ServerErrorPage } from "./pages/error/ServerErrorPage";
+import { TrendingMoviesAndShows } from "./pages/TrendingMoviesAndShows";
+import TrendingDetails from "./pages/TrendingDetails";
 
 const queryClient = new QueryClient();
 const Dashboard = lazy(() => import("@/pages/Dashboard"));
@@ -42,6 +44,11 @@ function App() {
                   </PublicRoute>
                 }
               />
+              <Route
+                path="/trending-movies"
+                element={<TrendingMoviesAndShows />}
+              />
+              <Route path="/trending/:showId" element={<TrendingDetails />} />
               <Route
                 path="*"
                 element={
