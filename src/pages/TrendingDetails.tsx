@@ -37,7 +37,7 @@ export const TrendingDetails = () => {
 
   const handleNavigateHome = () => {
     dispatch(setActivePage("Trending Movies"));
-    navigate("/trending-movies");
+    navigate("/");
   };
 
   return (

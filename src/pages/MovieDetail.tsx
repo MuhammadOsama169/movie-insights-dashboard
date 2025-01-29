@@ -46,7 +46,7 @@ export const MovieDetail = () => {
 
   const handleNavigateHome = () => {
     dispatch(setActivePage("Top Movies"));
-    navigate("/");
+    navigate("/top-movies");
   };
   return (
     <main className="min-h-screen  text-white p-6">

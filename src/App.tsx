@@ -29,7 +29,7 @@ function App() {
                 }
               />
               <Route
-                path="/"
+                path="/top-movies"
                 element={
                   <PublicRoute>
                     <BrowseMovies />
@@ -44,10 +44,7 @@ function App() {
                   </PublicRoute>
                 }
               />
-              <Route
-                path="/trending-movies"
-                element={<TrendingMoviesAndShows />}
-              />
+              <Route path="/" element={<TrendingMoviesAndShows />} />
               <Route path="/trending/:showId" element={<TrendingDetails />} />
               <Route
                 path="*"
