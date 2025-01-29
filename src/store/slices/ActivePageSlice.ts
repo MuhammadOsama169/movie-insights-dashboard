@@ -2,7 +2,7 @@ import { moviesInitialData } from "@/types/MovieDataTypes";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  active_page: "Top Movies",
+  active_page: "Trending Movies",
 };
 
 export const movieSlice = createSlice({

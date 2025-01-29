@@ -18,14 +18,14 @@ export const sidebarItems: SidebarItemTypes[] = [
     title: "Top Movies",
     icon: TbWorldStar,
     comingSoon: false,
-    href: "/",
+    href: "/top-movies",
   },
   {
     id: "trending_movies",
     title: "Trending Movies",
     icon: MdOutlineMovieFilter,
     comingSoon: false,
-    href: "/trending-movies",
+    href: "/",
   },
   {
     id: "tv_shows",

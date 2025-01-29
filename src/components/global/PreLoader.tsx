@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "@/assets/images/login-background.jpg";
+import logo from "@/assets/images/login-background.png";
 
 export const PreLoader = () => {
   return (
