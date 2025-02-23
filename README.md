@@ -16,14 +16,20 @@ https://watchinsights.netlify.app/
 - Responsive and user-friendly interface
 
 ## Technologies and Packages Used 📦
-- Pinia
-- Nuxt Icon & Images
+- Redux Toolkit
+- React Query
 - Taiwind CSS
-- Google Fonts
-- nuxt-lazytube
-- nuxt-device
+- Framer Motion
+- React Icons
+- Recharts
 - Eslint Airbnb
+- uidotdev/usehooks for debouncer & useMediaQuery
 
+## Data Source 📊
+Data was created through the help of a github repo linked below
+- https://jsonbin.io/
+
+- https://github.com/toedter/movies-demo/blob/master/backend/src/main/resources/static/movie-data/movies-250.json
 
 ##  Environment Variables
 ```VITE_MASTER_X_KEY= <backend_api_url>```
@@ -49,7 +55,3 @@ Leave a github star if you found this repo useful. This helps in increasing the 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-
-
-
